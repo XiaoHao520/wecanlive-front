@@ -1,0 +1,4 @@
+[submodule "src/vue2-admin"]
+	path = src/vue2-admin
+	url = http://github.com/easecloud/vue2-admin.git
+	branch = master

@@ -11,5 +11,23 @@ export default {
     M: '男',
     F: '女',
   },
+  isActive: {
+    2: '启用',
+    3: '禁用',
+  },
+  constellation: {
+    ARIES: '白羊座',
+    TAURUS: '金牛座',
+    GEMINI: '双子座',
+    CANCER: '巨蟹座',
+    LEO: '狮子座',
+    VIRGO: '处女座',
+    LIBRA: '天秤座',
+    SCORPIO: '天蝎座',
+    SAGITTARIUS: '射手座',
+    CAPRICORN: '摩羯座',
+    AQUARIUS: '水瓶座',
+    PISCES: '双鱼座',
+  },
 };
 

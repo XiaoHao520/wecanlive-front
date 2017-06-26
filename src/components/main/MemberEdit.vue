@@ -1,6 +1,6 @@
 <template>
 
-  <edit-view model='Customer'
+  <edit-view :model='model'
              title="客户管理"
              pk="user"
              :subtitle="(Number($route.params.id)?'编辑':'创建') + ''"
@@ -17,15 +17,15 @@
   export default {
     data() {
       return {
+        model: 'Member',
         options: {
           can_create: true,
           can_edit: true,
           can_delete: true,
         },
         fields: [
-          { title: 'ID', key: 'user', type: 'label' },
-          { title: '创建日期', key: 'date_created', type: 'label' },
-          { title: '登录名', key: 'user_item.username', type: 'label' },
+          { title: '用户ID', key: 'user', type: 'label' },
+          { title: '注册时间', key: 'date_created', type: 'label' },
           {
             title: '头像',
             type: 'image',
@@ -43,6 +43,17 @@
             type: 'radio-button',
             default: '',
             choices: this.$root.choices.gender,
+          },
+          {
+            title: '星座',
+            type: 'radio-button',
+            key: 'constellation',
+            choices: this.$root.choices.constellation,
+          },
+          {
+            title: '生日',
+            type: 'datepicker',
+            key: 'birthday',
           },
           {
             title: '是否启用',

@@ -2,8 +2,8 @@
 
   <list-view :model="model"
              pk="user"
-             title="用户管理"
-             subtitle="用户列表"
+             title="用戶管理"
+             subtitle="用戶列表"
              :options="options"
              :cols="cols"
              :listActions="listActions"
@@ -25,24 +25,24 @@
           can_select: true,
         },
         cols: [
-          { title: 'ID', key: 'user' },
-          { title: '头像', key: 'avatar_url', type: 'image', width: 75, height: 75 },
+          { title: '用戶ID', key: 'user' },
+          { title: '頭像', key: 'avatar_url', type: 'image', width: 75, height: 75 },
           {
-            title: '昵称',
+            title: '暱稱',
             key: 'nickname',
             filtering: {
               search_field: 'kw_nickname',
             },
           },
           {
-            title: '用户账号',
+            title: '用戶賬號',
             key: 'mobile',
             filtering: {
               search_field: 'kw_mobile',
             },
           },
           {
-            title: '性别',
+            title: '性別',
             key: 'gender',
             mapper: this.$root.choices.gender,
             filtering: {
@@ -52,7 +52,7 @@
             },
           },
           {
-            title: '年龄',
+            title: '年齡',
             key: 'member_age',
           },
           {
@@ -61,22 +61,22 @@
             mapper: this.$root.choices.constellation,
           },
           {
-            title: '好友数',
+            title: '好友數',
           },
           {
-            title: '追踪数',
+            title: '追蹤數',
           },
           {
-            title: '被追踪数',
+            title: '被追蹤數',
           },
           {
-            title: '发起直播数',
+            title: '發起直播數',
           },
           {
-            title: '最后直播时间',
+            title: '最後直播時間',
           },
           {
-            title: '注册时间',
+            title: '註冊時間',
             key: 'date_created',
             filter: x => x.substr(0, 10),
             filtering: {
@@ -86,7 +86,7 @@
             },
           },
           {
-            title: '账户状态',
+            title: '賬戶狀態',
             key: 'is_active',
             type: 'switch',
             filtering: {

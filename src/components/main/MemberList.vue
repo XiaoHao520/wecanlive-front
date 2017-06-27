@@ -6,6 +6,7 @@
              subtitle="用戶列表"
              :options="options"
              :cols="cols"
+             :pageSize="pageSize"
              :listActions="listActions"
              :actions="actions">
   </list-view>
@@ -18,6 +19,7 @@
       const vm = this;
       return {
         model: 'Member',
+        pageSize: 5,
         options: {
           can_create: true,
           can_edit: true,
@@ -62,18 +64,23 @@
           },
           {
             title: '好友數',
+            key: 'count_followed',
           },
           {
             title: '追蹤數',
+            key: 'count_follow',
           },
           {
             title: '被追蹤數',
+            key: 'count_followed',
           },
           {
             title: '發起直播數',
+            key: 'count_followed',
           },
           {
             title: '最後直播時間',
+            key: 'count_followed',
           },
           {
             title: '註冊時間',

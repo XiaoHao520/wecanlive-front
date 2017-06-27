@@ -29,5 +29,14 @@ export default {
     AQUARIUS: '水瓶座',
     PISCES: '双鱼座',
   },
+  activity_event_type: {
+    TEXT: '文本',
+    IMAGE: '图片',
+    VIDEO: '视频',
+    AUDIO: '音频',
+    COMBO: '混合',
+    OBJECT: '对象',
+    PROMPT: '提示',
+  },
 };
 

@@ -67,10 +67,96 @@
             key: 'count_followed',
           },
           {
+            title: '發直播數',
+            type: 'label',
+            key: 'count_live',
+          },
+          {
+            title: '最後直播',
+            type: 'label',
+            key: 'las_live_end',
+          },
+          {
             title: '是否啓用',
             key: 'is_active',
             default: true,
             type: 'switch',
+          },
+          {
+            title: '用戶好友',
+            type: 'list-view',
+            display: 'full',
+            options: {
+              model: 'Member',
+              options: {
+                can_edit: true,
+                show_pager: true,
+              },
+              pageSize: 5,
+              filters: {
+                is_contact_from: vm.$route.params.id,
+//                is_contact_to: vm.$route.params.id,
+              },
+              cols: [
+                { title: '用戶ID', key: 'user' },
+                {
+                  title: '用戶暱稱',
+                  key: 'nickname',
+                  filtering: {
+                    search_field: 'kw_nickname',
+                  },
+                },
+                {
+                  title: '用戶賬號',
+                  key: 'mobile',
+                  filtering: {
+                    search_field: 'kw_mobile',
+                  },
+                },
+                {
+                  title: '性別',
+                  key: 'gender',
+                  mapper: this.$root.choices.gender,
+                  filtering: {
+                    type: 'select',
+                    search_field: 'kw_gender',
+                    choices: this.$root.choices.gender,
+                  },
+                },
+                {
+                  title: '年齡',
+                  key: 'member_age',
+                },
+                {
+                  title: '星座',
+                  key: 'constellation',
+                  mapper: this.$root.choices.constellation,
+                },
+                {
+                  title: '最後直播時間',
+                  key: 'las_live_end',
+                },
+                {
+                  title: '註冊時間',
+                  key: 'date_created',
+                  filtering: {
+                    type: 'date_range',
+                    from_field: 'date_from__date_created',
+                    to_field: 'date_to__date_created',
+                  },
+                },
+                {
+                  title: '賬戶狀態',
+                  key: 'is_active',
+                  type: 'switch',
+                  filtering: {
+                    type: 'select',
+                    search_field: 'is_active',
+                    choices: this.$root.choices.isActive,
+                  },
+                },
+              ],
+            },
           },
           {
             title: '用戶追蹤的人',
@@ -124,7 +210,7 @@
                 },
                 {
                   title: '最後直播時間',
-                  key: 'count_followed',
+                  key: 'las_live_end',
                 },
                 {
                   title: '註冊時間',
@@ -201,7 +287,7 @@
                 },
                 {
                   title: '最後直播時間',
-                  key: 'count_followed',
+                  key: 'las_live_end',
                 },
                 {
                   title: '註冊時間',
@@ -289,6 +375,66 @@
                     from_field: 'date_from__date_created',
                     to_field: 'date_to__date_created',
                   },
+                },
+              ],
+            },
+          },
+          {
+            title: '用戶發起的直播',
+            type: 'list-view',
+            display: 'full',
+            options: {
+              model: 'Live',
+              options: {
+                can_edit: true,
+                show_pager: true,
+              },
+              pageSize: 5,
+              filters: {
+                member: vm.$route.params.id,
+              },
+              cols: [
+                {
+                  title: '房間號',
+                  key: 'id',
+                },
+                {
+                  title: '直播分類',
+                  key: 'category',
+                },
+                {
+                  title: '觀看數',
+                  key: 'count_view',
+                  ordering: 'count_view',
+                },
+                {
+                  title: '評論數',
+                  key: 'count_comment',
+                  ordering: 'count_comment',
+                },
+                {
+                  title: '收到禮物數量',
+                  key: 'count_prize',
+                  ordering: 'count_prize',
+                },
+                {
+                  title: '收到鑽石數量',
+//                  TODO: 鑽石數未實現
+                  key: 'id',
+                },
+                {
+                  title: '直播開始時間',
+                  key: 'date_created',
+                },
+                {
+                  title: '直播時長',
+                  key: 'duration',
+                  filter: x => `${x}分鐘`,
+                },
+                {
+                  title: '直播狀態',
+                  key: 'live_status',
+                  mapper: this.$root.choices.live_status,
                 },
               ],
             },

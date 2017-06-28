@@ -38,5 +38,9 @@ export default {
     OBJECT: '对象',
     PROMPT: '提示',
   },
+  live_status: {
+    ACTION: '直播中',
+    OVER: '已結束',
+  },
 };
 

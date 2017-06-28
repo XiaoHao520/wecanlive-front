@@ -9,4 +9,8 @@ export default [
   // 对应 menus.js 中的用户管理
   { path: '/member', name: 'main_member_list', component: require('./main/MemberList.vue') },
   { path: '/member/:id', name: 'main_member_edit', component: require('./main/MemberEdit.vue') },
+
+  // 对应 menus.js 中的直播管理
+  { path: '/live/category', name: 'main_live_category_list', component: require('./main/LiveCategoryList.vue') },
+  { path: 'live/category/:id', name: 'main_live_category_edit', component: require('./main/LiveCategoryEdit.vue') },
 ];

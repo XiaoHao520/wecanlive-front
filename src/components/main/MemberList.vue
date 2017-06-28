@@ -64,7 +64,7 @@
           },
           {
             title: '好友數',
-            key: 'count_followed',
+            key: 'count_friend',
           },
           {
             title: '追蹤數',
@@ -76,16 +76,15 @@
           },
           {
             title: '發起直播數',
-            key: 'count_followed',
+            key: 'count_live',
           },
           {
             title: '最後直播時間',
-            key: 'count_followed',
+            key: 'last_live_end',
           },
           {
             title: '註冊時間',
             key: 'date_created',
-            filter: x => x.substr(0, 10),
             filtering: {
               type: 'date_range',
               from_field: 'date_from__date_created',

@@ -57,6 +57,11 @@
             key: 'birthday',
           },
           {
+            title: '好友數',
+            type: 'label',
+            key: 'count_friend',
+          },
+          {
             title: '追踪数',
             type: 'label',
             key: 'count_follow',
@@ -74,7 +79,7 @@
           {
             title: '最後直播',
             type: 'label',
-            key: 'las_live_end',
+            key: 'last_live_end',
           },
           {
             title: '是否啓用',
@@ -134,7 +139,7 @@
                 },
                 {
                   title: '最後直播時間',
-                  key: 'las_live_end',
+                  key: 'last_live_end',
                 },
                 {
                   title: '註冊時間',
@@ -210,7 +215,7 @@
                 },
                 {
                   title: '最後直播時間',
-                  key: 'las_live_end',
+                  key: 'last_live_end',
                 },
                 {
                   title: '註冊時間',
@@ -287,7 +292,7 @@
                 },
                 {
                   title: '最後直播時間',
-                  key: 'las_live_end',
+                  key: 'last_live_end',
                 },
                 {
                   title: '註冊時間',

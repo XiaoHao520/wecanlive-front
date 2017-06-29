@@ -13,4 +13,6 @@ export default [
   // 对应 menus.js 中的直播管理
   { path: '/live/category', name: 'main_live_category_list', component: require('./main/LiveCategoryList.vue') },
   { path: 'live/category/:id', name: 'main_live_category_edit', component: require('./main/LiveCategoryEdit.vue') },
+  { path: '/live', name: 'main_live_list', component: require('./main/LiveList.vue') },
+  { path: 'live/:id', name: 'main_live_edit', component: require('./main/LiveEdit.vue') },
 ];

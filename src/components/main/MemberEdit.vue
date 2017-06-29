@@ -220,7 +220,6 @@
                 {
                   title: '註冊時間',
                   key: 'date_created',
-                  filter: x => x.substr(0, 10),
                   filtering: {
                     type: 'date_range',
                     from_field: 'date_from__date_created',

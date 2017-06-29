@@ -42,5 +42,10 @@ export default {
     ACTION: '直播中',
     OVER: '已結束',
   },
+  live_watch_log_status: {
+    NORMAL: '正常',
+    SILENT: '禁言',
+    SPEAK: '连麦',
+  },
 };
 

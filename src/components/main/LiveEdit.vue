@@ -149,6 +149,7 @@
                 {
                   title: '開播時長',
                   key: 'live_total_duration',
+                  filter: x => `${x}分鐘`,
                 },
                 {
                   title: '用戶停留時間',
@@ -168,6 +169,73 @@
                     type: 'select',
                     search_field: 'kw_status',
                     choices: this.$root.choices.live_watch_log_status,
+                  },
+                },
+              ],
+            },
+          },
+          {
+            title: '用戶送出的禮物',
+            type: 'list-view',
+            display: 'full',
+            options: {
+              model: 'PrizeOrder',
+              options: {
+                can_edit: true,
+                show_pager: true,
+              },
+              pageSize: 5,
+              filters: {
+                live: vm.$route.params.id,
+              },
+              cols: [
+                {
+                  title: '禮物名稱',
+                  key: 'prize_name',
+                  filtering: {
+                    search_field: 'kw_prize__name',
+                  },
+                },
+                {
+                  title: '所屬分類',
+                  key: 'prize_category',
+                  filtering: {
+                    search_field: 'kw_prize__category__name',
+                  },
+                },
+                {
+                  title: '價格（金幣）',
+                  key: 'prize_price',
+                },
+                {
+                  title: '數量',
+                  key: 'prize_transition_amount',
+                },
+                {
+                  title: '送出用戶賬號',
+                  key: 'user_debit',
+                  filtering: {
+                    search_field: 'kw_prize_transition__user_debit__member__mobile',
+                  },
+                },
+                {
+                  title: '送出用戶暱稱',
+                  key: 'user_debit_nickname',
+                },
+                {
+                  title: '對應直播房間號',
+                  key: 'live_id',
+                  filtering: {
+                    search_field: 'kw_live_watch_log__live__id',
+                  },
+                },
+                {
+                  title: '送出時間',
+                  key: 'date_created',
+                  filtering: {
+                    type: 'date_range',
+                    from_field: 'date_from__date_created',
+                    to_field: 'date_to__date_created',
                   },
                 },
               ],

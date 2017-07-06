@@ -32,6 +32,7 @@
           {
             title: '分類名稱',
             key: 'name',
+            ordering: 'name',
             filtering: {
               search_field: 'kw_name',
             },

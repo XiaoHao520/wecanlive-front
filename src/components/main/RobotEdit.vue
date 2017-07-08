@@ -26,7 +26,7 @@
             type: 'image',
             key: {
               read: 'member_item.avatar_item',
-              write: 'member_item.avatar',
+              write: 'member.avatar',
             },
           },
           {

@@ -1,9 +1,9 @@
 <template>
 
   <list-view :model="model"
-             pk="id"
-             title="[請輸入主標題]"
-             subtitle="[請輸入副標題]"
+             pk="user"
+             title="直播管理"
+             subtitle="機器人管理"
              :options="options"
              :cols="cols"
              :pageSize="pageSize"
@@ -16,7 +16,7 @@
   export default {
     data() {
       return {
-        model: '',
+        model: 'Robot',
         pageSize: 5,
         options: {
           can_create: true,
@@ -24,17 +24,53 @@
         },
         cols: [
           {
-            title: 'ID',
-            key: 'id',
-            ordering: 'id',
-            filtering: {
-              search_field: 'exact__id',
-            },
+            title: '用戶頭像',
+            key: 'user_avatar',
+            type: 'image',
+            width: 75,
+            height: 75,
           },
           {
-            title: '是否啓用',
-            key: 'is_active',
-            type: 'switch',
+            title: '用戶ID',
+            key: 'user_id',
+          },
+          {
+            title: '用戶暱稱',
+            key: 'user_nickname',
+          },
+          {
+            title: '性別',
+            key: 'user_gender',
+            mapper: this.$root.choices.gender,
+          },
+          {
+            title: '年齡',
+            key: 'user_age',
+          },
+          {
+            title: '星座',
+            key: 'user_constellation',
+            mapper: this.$root.choices.constellation,
+          },
+          {
+            title: '好友數',
+            key: 'count_friend',
+          },
+          {
+            title: '追蹤數',
+            key: 'count_follow',
+          },
+          {
+            title: '發起直播數',
+            key: 'count_live',
+          },
+          {
+            title: '鑽石數',
+            key: 'count_diamond',
+          },
+          {
+            title: '送出禮物數',
+            key: 'count_prize_sent',
           },
         ],
         actions: [],

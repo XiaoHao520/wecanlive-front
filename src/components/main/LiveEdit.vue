@@ -175,7 +175,40 @@
             },
           },
           {
-            title: '用戶送出的禮物',
+            title: '評論列表',
+            type: 'list-view',
+            display: 'full',
+            options: {
+              model: 'Comment',
+              options: {
+                can_edit: true,
+                show_pager: true,
+              },
+              pageSize: 5,
+              filters: {
+                live: vm.$route.params.id,
+              },
+              cols: [
+                {
+                  title: 'id',
+                  key: 'id',
+                },
+                {
+                  title: '內容',
+                  key: 'content',
+                  filtering: {
+                    search_field: 'kw_content',
+                  },
+                },
+                {
+                  title: '評論時間',
+                  key: 'date_created',
+                },
+              ],
+            },
+          },
+          {
+            title: '收禮列表',
             type: 'list-view',
             display: 'full',
             options: {

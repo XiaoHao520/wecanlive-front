@@ -68,10 +68,11 @@
             title: '收禮物數量',
             key: 'count_prize',
           },
-          {
-            title: '收鑽石數',
-            key: 'count_view',
-          },
+//          TODO: 鑽石數暫未實現
+//          {
+//            title: '收鑽石數',
+//            key: 'count_view',
+//          },
           {
             title: '直播開始時間',
             key: 'date_created',

@@ -28,6 +28,9 @@
             title: '分類ID',
             key: 'id',
             ordering: 'id',
+            filtering: {
+              search_field: 'exact__id',
+            },
           },
           {
             title: '分類名稱',

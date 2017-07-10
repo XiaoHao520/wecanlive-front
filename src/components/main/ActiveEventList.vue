@@ -25,7 +25,7 @@
         cols: [
           {
             title: '圖片',
-            key: 'images_item.image.url',
+            key: 'preview.image',
             type: 'image',
             width: 75,
             height: 75,

@@ -59,10 +59,10 @@
           },
           {
             title: '圖片監控',
-            type: 'image',
+            type: 'gallery',
             key: {
-              read: 'images_item.image',
-              write: '',
+              read: 'images_item',
+              write: 'images',
             },
           },
           {

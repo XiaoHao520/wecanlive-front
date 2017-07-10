@@ -55,6 +55,8 @@ export default [
   { path: '/prize/order/:id', name: 'main_prize_order_edit', component: require('./main/PrizeOrderEdit.vue') },
   { path: '/prize', name: 'main_prize_list', component: require('./main/PrizeList.vue') },
   { path: '/prize/:id', name: 'main_prize_edit', component: require('./main/PrizeEdit.vue') },
+  { path: '/prize/category', name: 'main_prize_category_list', component: require('./main/PrizeCategoryList.vue') },
+  { path: '/prize/category/:id', name: 'main_prize_category_edit', component: require('./main/PrizeCategoryEdit.vue') },
   { path: '/extra/prize', name: 'main_extra_prize_list', component: require('./main/ExtraPrizeList.vue') },
   { path: '/extra/prize/:id', name: 'main_extra_prize_edit', component: require('./main/ExtraPrizeEdit.vue') },
 

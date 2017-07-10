@@ -37,6 +37,7 @@ export default [{
   title: '物品管理',
   sub_menus: [
     { title: '禮物管理', link: { name: 'main_prize_list' } },
+    { title: '禮物分類管理', link: { name: 'main_prize_category_list' } },
     { title: '禮物訂單管理', link: { name: 'main_prize_order_list' } },
     { title: '贈送物品管理', link: { name: 'main_extra_prize_list' } },
   ],

@@ -24,12 +24,12 @@
           {
             title: '發佈者暱稱',
             type: 'label',
-            key: 'author_nickname',
+            key: 'nickname',
           },
           {
             title: '發佈者賬號',
             type: 'label',
-            key: 'author_mobile',
+            key: 'mobile',
           },
           {
             title: '點贊數',
@@ -39,7 +39,7 @@
           {
             title: '評論數',
             type: 'label',
-            key: 'count_amount',
+            key: 'count_comment',
           },
           {
             title: '發佈內容',
@@ -86,14 +86,14 @@
                 },
                 {
                   title: '用戶暱稱',
-                  key: 'author_nickname',
+                  key: 'nickname',
                   filtering: {
                     search_field: 'kw_author__member__nickname',
                   },
                 },
                 {
                   title: '用戶賬號',
-                  key: 'author_mobile',
+                  key: 'mobile',
                   filtering: {
                     search_field: 'kw_author__member__mobile',
                   },
@@ -108,6 +108,11 @@
                 {
                   title: '評論時間',
                   key: 'date_created',
+                },
+                {
+                  title: '狀態',
+                  key: 'is_active',
+                  type: 'switch',
                 },
               ],
             },

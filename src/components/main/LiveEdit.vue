@@ -196,14 +196,14 @@
                 },
                 {
                   title: '用戶暱稱',
-                  key: 'author_nickname',
+                  key: 'nickname',
                   filtering: {
                     search_field: 'kw_author__member__nickname',
                   },
                 },
                 {
                   title: '用戶賬號',
-                  key: 'author_mobile',
+                  key: 'mobile',
                   filtering: {
                     search_field: 'kw_author_member__mobile',
                   },
@@ -308,14 +308,14 @@
                 },
                 {
                   title: '送出用戶賬號',
-                  key: 'user_debit',
+                  key: 'user_credit',
                   filtering: {
-                    search_field: 'kw_prize_transition__user_debit__member__mobile',
+                    search_field: 'kw_prize_transition__user_credit__member__mobile',
                   },
                 },
                 {
                   title: '送出用戶暱稱',
-                  key: 'user_debit_nickname',
+                  key: 'user_credit_nickname',
                 },
                 {
                   title: '對應直播房間號',

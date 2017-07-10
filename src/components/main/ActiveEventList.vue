@@ -41,14 +41,14 @@
           },
           {
             title: '發佈者暱稱',
-            key: 'author_nickname',
+            key: 'nickname',
             filtering: {
               search_field: 'kw_author__member__nickname',
             },
           },
           {
             title: '發佈者賬號',
-            key: 'author_mobile',
+            key: 'mobile',
             filtering: {
               search_field: 'kw_author__member__mobile',
             },

@@ -2,10 +2,11 @@
 
   <list-view :model="model"
              pk="id"
-             title="[請輸入主標題]"
-             subtitle="[請輸入副標題]"
+             title="榜單管理"
+             subtitle="送禮榜管理"
              :options="options"
              :cols="cols"
+             :filters="filters"
              :pageSize="pageSize"
              :actions="actions">
   </list-view>
@@ -16,25 +17,55 @@
   export default {
     data() {
       return {
-        model: '',
+        model: 'Member',
         pageSize: 5,
         options: {
-          can_create: true,
-          can_edit: true,
+          can_create: false,
+          can_edit: false,
+        },
+        filters: {
+          rank_type: 'rank_prize',
         },
         cols: [
           {
-            title: 'ID',
-            key: 'id',
-            ordering: 'id',
+            title: '用戶暱稱',
+            key: 'nickname',
             filtering: {
-              search_field: 'exact__id',
+              search_field: 'kw_nickname',
             },
           },
           {
-            title: '是否啓用',
-            key: 'is_active',
-            type: 'switch',
+            title: '用戶賬號',
+            key: 'mobile',
+            filtering: {
+              search_field: 'kw_mobile',
+            },
+          },
+          {
+            title: '性別',
+            key: 'gender',
+            mapper: this.$root.choices.gender,
+          },
+          {
+            title: '年齡',
+            key: 'age',
+          },
+          {
+            title: '星座',
+            key: 'constellation',
+            mapper: this.$root.choices.constellation,
+          },
+          {
+            title: '總收禮鑽石數',
+            key: 'debit_diamond',
+          },
+          {
+            title: '總送出鑽石數',
+            key: 'credit_diamond',
+          },
+          {
+            title: '元氣指數',
+            key: 'debit_star_index',
           },
         ],
         actions: [],

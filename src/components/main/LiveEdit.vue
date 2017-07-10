@@ -178,6 +178,7 @@
             title: '評論列表',
             type: 'list-view',
             display: 'full',
+            id: 'comment',
             options: {
               model: 'Comment',
               options: {
@@ -194,6 +195,20 @@
                   key: 'id',
                 },
                 {
+                  title: '用戶暱稱',
+                  key: 'author_nickname',
+                  filtering: {
+                    search_field: 'kw_author__member__nickname',
+                  },
+                },
+                {
+                  title: '用戶賬號',
+                  key: 'author_mobile',
+                  filtering: {
+                    search_field: 'kw_author_member__mobile',
+                  },
+                },
+                {
                   title: '內容',
                   key: 'content',
                   filtering: {
@@ -204,7 +219,54 @@
                   title: '評論時間',
                   key: 'date_created',
                 },
+                {
+                  title: '狀態',
+                  key: 'watch_status',
+                  mapper: this.$root.choices.live_watch_log_status,
+                  filtering: {
+                    type: 'select',
+                    search_field: 'kw_livewatchlogs__status',
+                    choices: this.$root.choices.live_watch_log_status,
+                  },
+                },
               ],
+              actions: [{
+                title: '禁言',
+                isVisible(item) {
+                  return item.watch_status === 'NORMAL';
+                },
+                action(item) {
+                  vm.confirm('确定禁言该用户？').then(() => {
+                    vm.api('Comment').save({
+                      action: 'change_watch_status',
+                    }, {
+                      id: item.id,
+                      watch_status: 'SILENT',
+                    }).then(resp => {
+                      vm.fields[12].ref.reload();
+                      vm.notify('操作成功');
+                    });
+                  });
+                },
+              }, {
+                title: '解除',
+                isVisible(item) {
+                  return item.watch_status === 'SILENT';
+                },
+                action(item) {
+                  vm.confirm('确定解除该用户？').then(() => {
+                    vm.api('Comment').save({
+                      action: 'change_watch_status',
+                    }, {
+                      id: item.id,
+                      watch_status: 'NORMAL',
+                    }).then(resp => {
+                      vm.fields[12].ref.reload();
+                      vm.notify('操作成功');
+                    });
+                  });
+                },
+              }],
             },
           },
           {

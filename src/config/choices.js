@@ -47,5 +47,21 @@ export default {
     SILENT: '禁言',
     SPEAK: '连麦',
   },
+  account_transaction_type: {
+    RECHARGE: '充值',
+    WITHDRAW: '提现',
+    COMMISSION: '佣金',
+    PURCHASE: '消费',
+    FEE: '手续费',
+    REFUND: '退款',
+    DIRECT_PAY: '直接支付',
+  },
+  payment_type: {
+    BALANCE: '余额支付',
+    WXPAY: '支付宝',
+    ALIPAY: '微信支付',
+    APP: 'Buy in app',
+    PAYPAL: 'Paypal',
+  },
 };
 

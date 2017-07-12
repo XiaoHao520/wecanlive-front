@@ -14,7 +14,7 @@
 <script lang="babel" type="text/babel">
   export default {
     data() {
-//      const vm = this;
+      const vm = this;
       return {
         model: 'PrizeCategory',
         options: {
@@ -30,17 +30,107 @@
             title: '分類名稱',
             key: 'name',
           },
-//          {
-//            title: 'VIP專屬禮包',
-//            key: 'is_active',
-//            type: 'switch',
-//          },
           {
             title: '排序',
             key: 'sorting',
             type: 'input',
             htmlType: 'number',
             min: 0,
+          },
+          {
+            title: '普通款禮物',
+            type: 'list-view',
+            display: 'full',
+            options: {
+              model: 'Prize',
+              options: {
+                can_edit: false,
+                show_pager: true,
+              },
+              pageSize: 5,
+              filters: {
+                prize_category: vm.$route.params.id,
+              },
+              cols: [
+                {
+                  title: '禮物ID',
+                  key: 'id',
+                  filtering: {
+                    search_field: 'exact__id',
+                  },
+                },
+                {
+                  title: '圖標',
+                  key: 'icon_item.image',
+                  type: 'image',
+                  width: 75,
+                  height: 75,
+                },
+                {
+                  title: '禮物名稱',
+                  key: 'name',
+                  filtering: {
+                    search_field: 'kw_name',
+                  },
+                },
+                {
+                  title: '價格（金幣）',
+                  key: 'price',
+                },
+                {
+                  title: '排序',
+                  key: 'sorting',
+                },
+              ],
+            },
+          },
+//          todo: 普通跟特殊禮物 均沒有添加明確分類
+          {
+            title: '特殊款禮物',
+            type: 'list-view',
+            display: 'full',
+            options: {
+              model: 'Prize',
+              options: {
+                can_edit: false,
+                show_pager: true,
+              },
+              pageSize: 5,
+              filters: {
+                prize_category: vm.$route.params.id,
+              },
+              cols: [
+                {
+                  title: '禮物ID',
+                  key: 'id',
+                  filtering: {
+                    search_field: 'exact__id',
+                  },
+                },
+                {
+                  title: '圖標',
+                  key: 'icon_item.image',
+                  type: 'image',
+                  width: 75,
+                  height: 75,
+                },
+                {
+                  title: '禮物名稱',
+                  key: 'name',
+                  filtering: {
+                    search_field: 'kw_name',
+                  },
+                },
+                {
+                  title: '價格（金幣）',
+                  key: 'price',
+                },
+                {
+                  title: '排序',
+                  key: 'sorting',
+                },
+              ],
+            },
           },
         ],
       };

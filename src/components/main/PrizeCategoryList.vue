@@ -38,12 +38,11 @@
               search_field: 'kw_name',
             },
           },
-//          todo vip專屬禮包
-//          {
-//            title: 'VIP專屬禮包',
-//            key: 'is_static',
-//            type: 'switch',
-//          },
+          {
+            title: 'VIP專屬禮包',
+            key: 'is_vip_only',
+            type: 'switch',
+          },
           {
             title: '禮物數量',
             key: 'count_prize',
@@ -51,6 +50,7 @@
           {
             title: '排序',
             key: 'sorting',
+            ordering: 'sorting',
           },
         ],
         actions: [],

@@ -2,8 +2,8 @@
 
   <list-view :model="model"
              pk="id"
-             title="[請輸入主標題]"
-             subtitle="[請輸入副標題]"
+             title="子業務管理"
+             subtitle="敏感詞設置"
              :options="options"
              :cols="cols"
              :pageSize="pageSize"
@@ -16,15 +16,16 @@
   export default {
     data() {
       return {
-        model: '',
+        model: 'SensitiveWord',
         pageSize: 5,
         options: {
           can_create: true,
           can_edit: true,
+          can_delete: true,
         },
         cols: [
           {
-            title: 'ID',
+            title: '編號',
             key: 'id',
             ordering: 'id',
             filtering: {
@@ -32,9 +33,16 @@
             },
           },
           {
-            title: '是否啓用',
-            key: 'is_active',
-            type: 'switch',
+            title: '敏感詞',
+            key: 'text',
+            filtering: {
+              search_field: 'kw_text',
+            },
+            tdStyle: {
+              maxWidth: '400px',
+              whiteSpace: 'normal',
+              wordBreak: 'normal',
+            },
           },
         ],
         actions: [],

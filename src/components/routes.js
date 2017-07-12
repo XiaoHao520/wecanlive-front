@@ -93,6 +93,7 @@ export default [
   { path: '/broadcast', name: 'main_broadcast_list', component: require('./main/BroadcastList.vue') },
   { path: '/broadcast/:id', name: 'main_broadcast_edit', component: require('./main/BroadcastEdit.vue') },
   { path: '/sensitive/word', name: 'main_sensitive_word_list', component: require('./main/SensitiveWordList.vue') },
+  { path: '/sensitive/word/:id', name: 'main_sensitive_word_edit', component: require('./main/SensitiveWordEdit.vue') },
   { path: '/settings/barrage', name: 'main_settings_barrage', component: require('./main/SettingsBarrage.vue') },
   { path: '/settings/marquee', name: 'main_settings_marquee', component: require('./main/SettingsMarquee.vue') },
   { path: '/activity/page', name: 'main_activity_page_list', component: require('./main/ActivityPageList.vue') },

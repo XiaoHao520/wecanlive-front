@@ -24,7 +24,7 @@ export default [{
 }, {
   title: '節目管理',
   sub_menus: [
-    { title: 'Banner管理', link: { name: 'main_member_list' } },
+    { title: 'Banner管理', link: { name: 'main_banner_list' } },
     { title: '特輯視頻管理', link: { name: 'main_movie_list_special' } },
     { title: '熱門排行管理', link: { name: 'main_movie_list_hot' } },
   ],

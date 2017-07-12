@@ -63,5 +63,10 @@ export default {
     APP: 'Buy in app',
     PAYPAL: 'Paypal',
   },
+  banner_subject: {
+    HOT: '热门页面',
+    VIDEO: '节目页面',
+    ACTIVITY: '活动页面',
+  },
 };
 

@@ -58,8 +58,8 @@ export default {
   },
   payment_type: {
     BALANCE: '余额支付',
-    WXPAY: '支付宝',
-    ALIPAY: '微信支付',
+    WXPAY: '微信支付',
+    ALIPAY: '支付宝',
     APP: 'Buy in app',
     PAYPAL: 'Paypal',
   },
@@ -67,6 +67,11 @@ export default {
     HOT: '热门页面',
     VIDEO: '节目页面',
     ACTIVITY: '活动页面',
+  },
+  withdraw_status: {
+    PENDING: '申请中',
+    APPROVED: '提现成功',
+    REJECTED: '驳回',
   },
 };
 

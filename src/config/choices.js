@@ -73,5 +73,9 @@ export default {
     APPROVED: '提现成功',
     REJECTED: '驳回',
   },
+  prize_type: {
+    NORMAL: '普通款',
+    SPECIAL: '特殊款',
+  },
 };
 

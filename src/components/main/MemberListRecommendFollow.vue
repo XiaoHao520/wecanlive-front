@@ -1,43 +1,104 @@
 <template>
 
   <list-view :model="model"
-             pk="id"
-             title="[請輸入主標題]"
-             subtitle="[請輸入副標題]"
+             pk="user"
+             title="子業務管理"
+             subtitle="首頁追蹤推薦名單"
              :options="options"
              :cols="cols"
              :pageSize="pageSize"
-             :actions="actions">
+             :list-actions="listActions"
+             :actions="actions"
+             :filters="filters"
+             ref="view">
+
+    <v-modal slot="after"
+             title="添加用戶"
+             :visible="modal.show"
+             @ok="modal.show=false"
+             @cancel="modal.show=false">
+      <list-view-table
+        class="list-view-main-table"
+        :cols="modal.cols"
+        :options="modal.options"
+        :model="model"
+        :pageSize="5"
+        :actions="modal.actions"
+        :filters="modal.filters"
+        ref="modalView"
+      ></list-view-table>
+    </v-modal>
+
   </list-view>
 
 </template>
 
 <script lang="babel" type="text/babel">
+  import colMemberListFull from '../../models/cols/member_list_full';
+  import colMemberListModal from '../../models/cols/member_list_modal';
+
   export default {
     data() {
+      const vm = this;
       return {
-        model: '',
-        pageSize: 5,
+        model: 'Member',
+        pageSize: 10,
         options: {
-          can_create: true,
-          can_edit: true,
+          can_create: false,
+          can_edit: false,
         },
-        cols: [
-          {
-            title: 'ID',
-            key: 'id',
-            ordering: 'id',
-            filtering: {
-              search_field: 'exact__id',
+        cols: colMemberListFull(vm),
+        filters: {
+          is_follow_recommended: 'True',
+        },
+        listActions: [{
+          title: '添加',
+          buttonClass: 'primary',
+          action() {
+            vm.modal.show = true;
+          },
+        }],
+        actions: [{
+          title: '刪除',
+          buttonClass: 'danger',
+          action(item) {
+            vm.confirm('確定將這個用戶從推薦名單移除？').then(() => {
+              vm.api().patch({
+                id: item.user,
+              }, {
+                is_follow_recommended: false,
+              }).then(resp => {
+                vm.$message.success('操作成功');
+                vm.$refs.view.reload();
+              });
+            });
+          },
+        }],
+        modal: {
+          show: false,
+          options: {
+            show_pager: true,
+          },
+          filters: {
+            is_follow_recommended: 'False',
+          },
+          actions: [{
+            title: '添加',
+            buttonClass: 'primary',
+            action(item) {
+              vm.api().patch({
+                id: item.user,
+              }, {
+                is_follow_recommended: true,
+              }).then(resp => {
+                vm.$message.success('操作成功');
+                vm.$refs.modalView.reload();
+                vm.$refs.view.reload();
+              });
             },
-          },
-          {
-            title: '是否啓用',
-            key: 'is_active',
-            type: 'switch',
-          },
-        ],
-        actions: [],
+          }],
+          cols: colMemberListModal(vm),
+        },
       };
     },
     computed: {},

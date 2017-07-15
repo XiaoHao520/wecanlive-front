@@ -32,7 +32,7 @@ export default {
   // 是否传送跨域 cookie
   cross_origin: true,
   // 权限菜单配置
-  dynamic_menus: false,
+  dynamic_menus: true,
   // 是否不加载 Vue Beauty 库
   skip_vue_beauty: false,
   // dynamic_menus: {

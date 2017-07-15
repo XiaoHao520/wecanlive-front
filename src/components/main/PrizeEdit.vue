@@ -81,6 +81,17 @@
             pick_time: true,
             key: 'date_sticker_end',
           },
+          {
+            title: '礼物类型',
+            key: 'type',
+            type: 'radio-button',
+            choices: this.$root.choices.prize_type,
+          },
+          {
+            title: '排序',
+            key: 'sorting',
+            htmlType: 'number',
+          },
         ],
       };
     },

@@ -304,18 +304,18 @@
                 },
                 {
                   title: '數量',
-                  key: 'prize_transition_amount',
+                  key: 'prize_transaction_amount',
                 },
                 {
                   title: '送出用戶賬號',
-                  key: 'user_credit',
+                  key: 'author_mobile',
                   filtering: {
-                    search_field: 'kw_prize_transition__user_credit__member__mobile',
+                    search_field: 'kw_author__member__mobile',
                   },
                 },
                 {
                   title: '送出用戶暱稱',
-                  key: 'user_credit_nickname',
+                  key: 'author_nickname',
                 },
                 {
                   title: '對應直播房間號',

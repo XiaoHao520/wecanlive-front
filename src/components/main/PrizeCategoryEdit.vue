@@ -50,6 +50,7 @@
               pageSize: 5,
               filters: {
                 prize_category: vm.$route.params.id,
+                prize_type: 'NORMAL',
               },
               cols: [
                 {
@@ -84,7 +85,6 @@
               ],
             },
           },
-//          todo: 普通跟特殊禮物 均沒有添加明確分類
           {
             title: '特殊款禮物',
             type: 'list-view',
@@ -98,6 +98,7 @@
               pageSize: 5,
               filters: {
                 prize_category: vm.$route.params.id,
+                prize_type: 'SPECIAL',
               },
               cols: [
                 {

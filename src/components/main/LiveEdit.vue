@@ -3,7 +3,7 @@
   <edit-view :model="model"
              title="直播間管理"
              pk="id"
-             :subtitle="(Number($route.params.id)?'編輯':'創建') + ''"
+             :subtitle="(Number($route.params.id)?'編輯':'創建') + '直播間'"
              :fields="fields"
              :options="options"
              ref="view">

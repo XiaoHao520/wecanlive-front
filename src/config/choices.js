@@ -77,5 +77,14 @@ export default {
     NORMAL: '普通款',
     SPECIAL: '特殊款',
   },
+  prize_price_type: {
+    COIN: '金幣',
+    STAR: '元氣',
+  },
+  prize_marquee_size: {
+    LARGE: '大',
+    MEDIUM: '中',
+    SMALL: '小',
+  },
 };
 

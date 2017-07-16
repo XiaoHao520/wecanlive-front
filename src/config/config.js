@@ -3,7 +3,7 @@ export default {
   // 平台标识符，暂用于区分菜单
   project: 'myproject',
   // API Root，指定后台地址
-  api_root: (process.env.NODE_ENV === 'production') ? '/api' : 'http://127.0.0.1:8000/api',
+  api_root: (process.env.NODE_ENV === 'production') ? '/api' : '/api',
   // 多套 API
   // api: {
   //   site_a: 'http://a.example.com/api',

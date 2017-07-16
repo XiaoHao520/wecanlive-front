@@ -35,19 +35,23 @@ export default vm => [
     mapper: vm.$root.choices.constellation,
   },
   {
-    title: '好友數',
+    // title: '好友數',
+    title: '好友',
     key: 'count_friend',
   },
   {
-    title: '追蹤數',
+    // title: '追蹤數',
+    title: '追蹤',
     key: 'count_follow',
   },
   {
-    title: '被追蹤數',
+    // title: '被追蹤數',
+    title: '粉絲',
     key: 'count_followed',
   },
   {
-    title: '發起直播數',
+    // title: '發起直播數',
+    title: '直播',
     key: 'count_live',
   },
   {
@@ -57,6 +61,9 @@ export default vm => [
   {
     title: '註冊時間',
     key: 'date_created',
+    filter(x) {
+      return x.substr(0, 10);
+    },
     filtering: {
       type: 'date_range',
       from_field: 'date_from__date_created',

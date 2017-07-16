@@ -114,6 +114,7 @@
             choices: this.$root.choices.prize_type,
             description: '普通款不限制购买，' +
             '特殊款必须在同一礼物分类里面的所有普通款商品都购买过之后才能购买',
+            default: 'NORMAL',
           },
           {
             title: '排序',

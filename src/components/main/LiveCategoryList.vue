@@ -8,24 +8,6 @@
              :cols="cols"
              :pageSize="pageSize"
              :actions="actions">
-
-    <v-modal slot="after"
-             title="添加用戶"
-             :visible="modal.show"
-             @ok="modal.show=false"
-             @cancel="modal.show=false">
-      <list-view-table
-        class="list-view-main-table"
-        :cols="modal.cols"
-        :options="modal.options"
-        :model="model"
-        :pageSize="5"
-        :actions="modal.actions"
-        :filters="modal.filters"
-        ref="modalView"
-      ></list-view-table>
-    </v-modal>
-
   </list-view>
 
 </template>

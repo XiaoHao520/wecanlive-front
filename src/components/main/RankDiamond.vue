@@ -57,15 +57,15 @@
           },
           {
             title: '總收禮鑽石數',
-            key: 'credit_diamond',
-          },
-          {
-            title: '總送出鑽石數',
             key: 'debit_diamond',
           },
           {
+            title: '總送出鑽石數',
+            key: 'credit_diamond',
+          },
+          {
             title: '元氣指數',
-            key: 'debit_star_index',
+            key: 'star_index_receiver_balance',
           },
         ],
         actions: [],

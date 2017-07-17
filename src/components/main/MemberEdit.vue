@@ -351,18 +351,18 @@
                 },
                 {
                   title: '數量',
-                  key: 'prize_transition_amount',
+                  key: 'prize_transaction_amount',
                 },
                 {
                   title: '送出用戶賬號',
-                  key: 'user_debit',
+                  key: 'receiver_mobile',
                   filtering: {
-                    search_field: 'kw_prize_transition__user_debit__member__mobile',
+                    search_field: 'kw_receiver_prize_transaction__user_debit__member__mobile',
                   },
                 },
                 {
                   title: '送出用戶暱稱',
-                  key: 'user_debit_nickname',
+                  key: 'receiver_nickname',
                 },
                 {
                   title: '對應直播房間號',

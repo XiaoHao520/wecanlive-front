@@ -65,7 +65,7 @@
           },
           {
             title: '元氣指數',
-            key: 'debit_star_index',
+            key: 'star_index_receiver_balance',
           },
         ],
         actions: [],

@@ -24,6 +24,8 @@ export default [
     name: 'main_family_setting_level',
     component: require('./main/FamilySettingLevel.vue')
   },
+  { path: '/family/article/:id', name: 'main_family_article_edit', component: require('./main/FamilyArticleEdit.vue') },
+  { path: '/family/mission/:id', name: 'main_family_mission_edit', component: require('./main/FamilyMissionEdit.vue') },
 
   // 直播管理
   { path: '/live/analysis', name: 'main_live_analysis', component: require('./main/LiveAnalysis.vue') },

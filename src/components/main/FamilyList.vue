@@ -47,7 +47,7 @@
           },
           {
             title: '家族創始人',
-            key: 'nickname',
+            key: 'author_nickname',
           },
           {
             title: '創始人ID',

@@ -86,5 +86,33 @@ export default {
     MEDIUM: '中',
     SMALL: '小',
   },
+  family_member_role: {
+    MASTER: '族长',
+    ADMIN: '管理员',
+    NORMAL: '平民',
+  },
+  family_mission_item: {
+    WATCH_MASTER_PRIZE: '送家族長禮物額度',
+    WATCH_MASTER_DURATION: '觀看家族長直播時長',
+    COUNT_WATCH_LOG: '累計觀看數',
+    COUNT_FOLLOWED: '陌生人追蹤你的個數',
+    COUNT_FRIEND: '擁有的好友數',
+    COUNT_LOGIN: '連續登錄天數',
+    COUNT_INVITE: '邀請好友註冊數',
+    COUNT_SHARE_MASTER_LIVE: '分享家族長直播的分享數',
+    COUNT_WATCH_MASTER_LIVE: '在家族長直播間的訪談數',
+    COUNT_LIVE: '連續開播的天數',
+    COUNT_RECEIVE_DIAMOND: '收到鑽石額度',
+  },
+  family_mission_award: {
+    EXPERIENCE_POINTS: '经验值',
+    ICOIN: 'i币',
+    COIN: '金币',
+    PRIZE: '礼物',
+    CONTRIBUTION: '贡献值',
+    BADGE: '勋章',
+    MARQUEE_CONTENT: '跑马灯内容',
+    STAR: '元气',
+  },
 };
 

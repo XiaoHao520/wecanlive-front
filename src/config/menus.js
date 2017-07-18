@@ -78,6 +78,7 @@ export default [{
     { title: '寶盒領取記錄', link: { name: 'main_star_box_record_list' } },
     { title: '消息推送管理', link: { name: 'main_broadcast_list' } },
     { title: '敏感詞管理', link: { name: 'main_sensitive_word_list' } },
+    { title: '徽章管理', link: { name: 'main_badge_list' } },
     { title: '發送彈幕設置', link: { name: 'main_settings_barrage' } },
     { title: '跑马灯设置', link: { name: 'main_settings_marquee' } },
     { title: '启动页设置', link: { name: 'main_settings_splash_screen' } },

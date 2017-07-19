@@ -2,11 +2,12 @@
 
   <list-view :model="model"
              pk="id"
-             title="[請輸入主標題]"
-             subtitle="[請輸入副標題]"
+             title="活動列表"
+             subtitle="累計鑽石活動"
              :options="options"
              :cols="cols"
              :pageSize="pageSize"
+             :filters="filters"
              :actions="actions">
   </list-view>
 
@@ -16,15 +17,18 @@
   export default {
     data() {
       return {
-        model: '',
+        model: 'Activity',
         pageSize: 5,
         options: {
           can_create: true,
           can_edit: true,
         },
+        filters: {
+          activity_type: 'DIAMOND',
+        },
         cols: [
           {
-            title: 'ID',
+            title: '活動ID',
             key: 'id',
             ordering: 'id',
             filtering: {
@@ -32,9 +36,39 @@
             },
           },
           {
-            title: '是否啓用',
-            key: 'is_active',
-            type: 'switch',
+            title: '活動類型',
+            key: 'type',
+            mapper: this.$root.choices.activity_type,
+          },
+          {
+            title: '活動標題',
+            key: 'name',
+            filtering: {
+              search_field: 'kw_name',
+            },
+          },
+          {
+            title: '活動開始時間',
+            key: 'date_begin',
+            filtering: {
+              type: 'date_range',
+              from_field: 'date_from__date_begin',
+              to_field: 'date_to__date_begin',
+            },
+          },
+          {
+            title: '活動結束時間',
+            key: 'date_end',
+            filtering: {
+              type: 'date_range',
+              from_field: 'date_from__date_end',
+              to_field: 'date_to__date_end',
+            },
+          },
+          {
+            title: '活動狀態',
+            key: 'status',
+            mapper: this.$root.choices.activity_status,
           },
         ],
         actions: [],

@@ -1,7 +1,7 @@
 <template>
 
   <edit-view :model="model"
-             title="[請填寫主標題]"
+             title="发布活动"
              pk="id"
              :subtitle="(Number($route.params.id)?'編輯':'創建') + ''"
              :fields="fields"
@@ -16,7 +16,7 @@
     data() {
 //      const vm = this;
       return {
-        model: 'xxxx',
+        model: 'Activity',
         options: {
           can_edit: false,
         },

@@ -21,7 +21,7 @@
         pageSize: 5,
         options: {
           can_create: true,
-          can_edit: true,
+          can_edit: false,
         },
         filters: {
           activity_type: 'DIAMOND',
@@ -71,7 +71,18 @@
             mapper: this.$root.choices.activity_status,
           },
         ],
-        actions: [],
+        actions: [{
+          title: '查看',
+          action(item) {
+            const vm = this;
+            vm.$router.push({
+              name: 'main_activity_edit_diamond',
+              params: {
+                id: item.id,
+              },
+            });
+          },
+        }],
       };
     },
     computed: {},

@@ -157,5 +157,14 @@ export default {
     '000010': '连续开播X天',
     '000011': '收到钻石额度',
   },
+  activity_award: {
+    experience: '經驗值',
+    icoin: 'i幣',
+    coin: '金幣',
+    star: '星星',
+    prize: '禮物',
+    contribution: '貢獻值',
+    badge: '勳章',
+  },
 };
 

@@ -101,6 +101,10 @@
     computed: {
       item() {
         const vm = this;
+        if (!vm.$refs.view.item.id) {
+//          TODO:  bug
+          console.log('>>>>>>>>> 新建用户时，item 没有对应信息导致角色选项显示不正确 <<<<<<<<<');
+        }
         return vm.$refs.view.item;
       },
     },

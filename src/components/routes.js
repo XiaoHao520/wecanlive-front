@@ -72,6 +72,10 @@ export default [
   { path: '/activity/watch', name: 'main_activity_list_watch', component: require('./main/ActivityListWatch.vue') },
   { path: '/activity/draw', name: 'main_activity_list_draw', component: require('./main/ActivityListDraw.vue') },
   { path: '/activity/diamond', name: 'main_activity_list_diamond', component: require('./main/ActivityListDiamond.vue') },
+  { path: '/activity/vote/:id', name: 'main_activity_edit_vote', component: require('./main/ActivityEditVote.vue') },
+  { path: '/activity/watch/:id', name: 'main_activity_edit_watch', component: require('./main/ActivityEditWatch.vue') },
+  { path: '/activity/draw/:id', name: 'main_activity_edit_draw', component: require('./main/ActivityEditDraw.vue') },
+  { path: '/activity/diamond/:id', name: 'main_activity_edit_diamond', component: require('./main/ActivityEditDiamond.vue') },
   { path: '/activity', name: 'main_activity_list', component: require('./main/ActivityList.vue') },
   { path: '/activity/:id', name: 'main_activity_edit', component: require('./main/ActivityEdit.vue') },
 

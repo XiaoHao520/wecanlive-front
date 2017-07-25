@@ -93,6 +93,7 @@ export default [
   { path: '/member/recommend/follow', name: 'main_member_list_recommend_follow', component: require('./main/MemberListRecommendFollow.vue') },
   { path: '/settings/daily', name: 'main_settings_daily', component: require('./main/SettingsDaily.vue') },
   { path: '/inform', name: 'main_inform_list', component: require('./main/InformList.vue') },
+  { path: '/settings/invite', name: 'main_settings_invite', component: require('./main/SettingsInvite.vue') },
   { path: '/settings/star', name: 'main_settings_star', component: require('./main/SettingsStar.vue') },
   { path: '/settings/star/box', name: 'main_settings_star_box', component: require('./main/SettingsStarBox.vue') },
   { path: '/star/box/record', name: 'main_star_box_record_list', component: require('./main/StarBoxRecordList.vue') },

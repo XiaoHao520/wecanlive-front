@@ -48,11 +48,15 @@
             key: 'date_end',
           },
           {
-            title: '累計鑽石數',
+            title: '獲獎方式',
             type: 'html',
-            key: 'rules',
+            key: 'award_way',
             filter(item) {
-              return `<div>${item}</div>`;
+              let str = '';
+              item.forEach(awardWay => {
+                str += `<div>${awardWay}</div>`;
+              });
+              return str;
             },
           },
         ],

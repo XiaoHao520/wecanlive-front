@@ -14,7 +14,6 @@
 <script lang="babel" type="text/babel">
   export default {
     data() {
-      const vm = this;
       return {
         model: 'Activity',
         options: {
@@ -55,40 +54,11 @@
           {
             title: '獲獎方式',
             type: 'html',
-            key: 'json_rules',
+            key: 'award_way',
             filter(item) {
               let str = '';
-              const promise = [];
-              const activityAward = {
-                experience: '經驗值',
-                icoin: 'i幣',
-                coin: '金幣',
-                star: '星星',
-                prize: '禮物',
-                contribution: '貢獻值',
-                badge: '勳章',
-              };
-              item.awards.forEach(awardItem => {
-                let strAward = '';
-                let strRank = '';
-                if (awardItem.award.type === 'badge' || awardItem.award.type === 'prize') {
-                  promise.push(vm.api(awardItem.award.type).get({
-                    id: awardItem.award.value,
-                  }).then(resp => {
-                    strAward = resp.data.name;
-                  }));
-                } else {
-                  strAward = awardItem.award.value + activityAward[awardItem.award.type];
-                }
-                if (awardItem.from === awardItem.to) {
-                  strRank = `第${awardItem.from}名：`;
-                } else {
-                  strRank = `第${awardItem.from}名 - 第${awardItem.to}名：`;
-                }
-                Promise.all(promise).then(() => {
-                  str += `<div>${strRank + strAward}</div>`;
-                  console.log(str);
-                });
+              item.forEach(awardWay => {
+                str += `<div>${awardWay}</div>`;
               });
               return str;
             },

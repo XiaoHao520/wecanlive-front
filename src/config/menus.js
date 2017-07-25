@@ -73,6 +73,7 @@ export default [{
     { title: '首頁追蹤推薦', link: { name: 'main_member_list_recommend_follow' } },
     { title: '簽到管理', link: { name: 'main_settings_daily' } },
     { title: '舉報管理', link: { name: 'main_inform_list' } },
+    { title: '邀請好友管理', link: { name: 'main_settings_invite' } },
     { title: '元氣管理', link: { name: 'main_settings_star' } },
     { title: '元氣寶盒', link: { name: 'main_settings_star_box' } },
     { title: '寶盒領取記錄', link: { name: 'main_star_box_record_list' } },
@@ -87,7 +88,7 @@ export default [{
     { title: 'VIP管理', link: { name: 'main_settings_vip' } },
     { title: '钻石兑换管理', link: { name: 'main_settings_diamond_exchange' } },
     { title: '金币充值管理', link: { name: 'main_settings_recharge' } },
-    { title: '金币充值管理', link: { name: 'main_settings_redbag' } },
+    { title: '紅包管理', link: { name: 'main_settings_redbag' } },
     { title: '客服中心', link: { name: 'main_settings_customer_center' } },
   ],
 }];

@@ -276,7 +276,7 @@
             options: {
               model: 'PrizeOrder',
               options: {
-                can_edit: true,
+                can_edit: false,
                 show_pager: true,
               },
               pageSize: 5,

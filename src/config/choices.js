@@ -166,5 +166,10 @@ export default {
     contribution: '貢獻值',
     badge: '勳章',
   },
+  admin_log_type: {
+    CREATE: '新增',
+    UPDATE: '修改',
+    DELETE: '刪除',
+  },
 };
 

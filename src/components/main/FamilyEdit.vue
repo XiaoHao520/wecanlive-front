@@ -29,7 +29,7 @@
           {
             title: '家族名稱',
             key: 'name',
-            type: 'label',
+            type: 'input',
           },
           {
             title: '家族創始人',

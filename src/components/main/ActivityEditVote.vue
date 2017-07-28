@@ -40,11 +40,13 @@
             title: '活動開始時間',
             type: 'datepicker',
             key: 'date_begin',
+            pick_time: true,
           },
           {
             title: '活動結束時間',
             type: 'datepicker',
             key: 'date_end',
+            pick_time: true,
           },
           {
             title: '得票方式',

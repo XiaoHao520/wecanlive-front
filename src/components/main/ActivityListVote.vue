@@ -8,6 +8,7 @@
              :cols="cols"
              :pageSize="pageSize"
              :filters="filters"
+             :listActions="listActions"
              :actions="actions">
   </list-view>
 
@@ -20,7 +21,7 @@
         model: 'Activity',
         pageSize: 5,
         options: {
-          can_create: true,
+          can_create: false,
           can_edit: false,
         },
         filters: {
@@ -88,6 +89,15 @@
               params: {
                 id: item.id,
               },
+            });
+          },
+        }],
+        listActions: [{
+          title: '新增',
+          action() {
+            const vm = this;
+            vm.$router.push({
+              name: 'main_activity_new_vote',
             });
           },
         }],

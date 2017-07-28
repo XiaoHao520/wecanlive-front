@@ -19,7 +19,7 @@
         model: 'Family',
         pageSize: 5,
         options: {
-          can_create: true,
+          can_create: false,
           can_edit: true,
         },
         cols: [

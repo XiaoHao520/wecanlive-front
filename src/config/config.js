@@ -16,7 +16,7 @@ export default {
   // 缺省 underscore
   api_model_adjust: 'underscore',
   // 平台名称
-  platform_name: 'WeCanLive',
+  platform_name: 'wecanLive',
   // 版本号
   version: '0.0.1',
   // 初始路由

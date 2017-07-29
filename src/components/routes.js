@@ -92,7 +92,7 @@ export default [
   { path: '/banner/hot', name: 'main_banner_list_hot', component: require('./main/BannerListHot.vue') },
   { path: '/settings/hot', name: 'main_settings_hot', component: require('./main/SettingsHot.vue') },
   { path: '/celebrity/category', name: 'main_celebrity_category_list', component: require('./main/CelebrityCategoryList.vue') },
-  { path: '/celebrity/category/id', name: 'main_celebrity_category_edit', component: require('./main/CelebrityCategoryEdit.vue') },
+  { path: '/celebrity/category/:id', name: 'main_celebrity_category_edit', component: require('./main/CelebrityCategoryEdit.vue') },
   { path: '/member/recommend/welcome', name: 'main_member_list_recommend_welcome', component: require('./main/MemberListRecommendWelcome.vue') },
   { path: '/member/recommend/follow', name: 'main_member_list_recommend_follow', component: require('./main/MemberListRecommendFollow.vue') },
   { path: '/settings/daily', name: 'main_settings_daily', component: require('./main/SettingsDaily.vue') },

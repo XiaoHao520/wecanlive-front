@@ -171,5 +171,13 @@ export default {
     UPDATE: '修改',
     DELETE: '刪除',
   },
+  movie_category: {
+    HOT: '熱門視頻',
+    SPECIAL: '特輯視頻',
+  },
+  movie_type: {
+    MOVIE: '影片',
+    LIVE: '直播',
+  },
 };
 

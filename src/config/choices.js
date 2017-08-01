@@ -179,5 +179,14 @@ export default {
     MOVIE: '影片',
     LIVE: '直播',
   },
+  inform_status: {
+    PENDING: '等待处理',
+    SUCCESS: '举报成功',
+    FAIL: '举报失败',
+  },
+  inform_object_type: {
+    live: '直播',
+    activeevent: '動態',
+  },
 };
 

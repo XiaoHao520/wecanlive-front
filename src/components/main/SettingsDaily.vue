@@ -12,18 +12,19 @@
     </header>
 
     <section class="page-body">
-      <v-row :gutter="6"
-             type="flex"
-             style="margin: 4px 0"
-             v-for="(item, index) in items">
-        <v-col :span="6" class="ant-form-item-label" style="padding: 0">
-          <label>第{{index + 1}}天簽到獎勵</label>
-        </v-col>
-        <v-col :span="8" class="ant-form-item-control">
-          <v-select style="width: 200px" :data="type_select" @change="change_type" v-model="item.val.type"></v-select>
-          <v-input-number :min="1" :step="1" v-model="item.val.value"></v-input-number>
-        </v-col>
-      </v-row>
+      <template v-for="(item, index) in items">
+        <v-row :gutter="6"
+               type="flex"
+               style="margin: 4px 0">
+          <v-col :span="6" class="ant-form-item-label" style="padding: 0">
+            <label>第{{index + 1}}天簽到獎勵</label>
+          </v-col>
+          <v-col :span="8" class="ant-form-item-control">
+            <v-select style="width: 200px" :data="type_select" @change="change_type" v-model="item.val.type"></v-select>
+            <v-input-number :min="1" :step="1" v-model="item.val.value"></v-input-number>
+          </v-col>
+        </v-row>
+      </template>
 
       <br>
 

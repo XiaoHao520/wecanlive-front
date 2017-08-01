@@ -12,6 +12,7 @@ export default [{
   sub_menus: [
     { title: '用戶信息管理', link: { name: 'main_member_list' } },
     { title: '家族信息管理', link: { name: 'main_family_list' } },
+    { title: '家族任務設定', link: { name: 'main_settings_family_mission' } },
   ],
 }, {
   title: '直播管理',

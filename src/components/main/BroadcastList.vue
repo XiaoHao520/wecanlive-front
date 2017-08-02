@@ -2,8 +2,8 @@
 
   <list-view :model="model"
              pk="id"
-             title="[請輸入主標題]"
-             subtitle="[請輸入副標題]"
+             title="子業務管理"
+             subtitle="消息推送管理"
              :options="options"
              :cols="cols"
              :pageSize="pageSize"
@@ -16,15 +16,15 @@
   export default {
     data() {
       return {
-        model: '',
+        model: 'Broadcast',
         pageSize: 5,
         options: {
           can_create: true,
-          can_edit: true,
+          can_edit: false,
         },
         cols: [
           {
-            title: 'ID',
+            title: '序號',
             key: 'id',
             ordering: 'id',
             filtering: {
@@ -32,9 +32,24 @@
             },
           },
           {
-            title: '是否啓用',
-            key: 'is_active',
-            type: 'switch',
+            title: '系統消息',
+            key: 'content',
+            tdStyle: {
+              maxWidth: '500',
+              whiteSpace: 'normal',
+              wordBreak: 'normal',
+            },
+            filtering: {
+              search_field: 'kw_content',
+            },
+          },
+          {
+            title: '推送對象',
+            key: 'groups',
+          },
+          {
+            title: '發送時間',
+            key: 'date_sent',
           },
         ],
         actions: [],

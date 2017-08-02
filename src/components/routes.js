@@ -27,6 +27,7 @@ export default [
   { path: '/family/article/:id', name: 'main_family_article_edit', component: require('./main/FamilyArticleEdit.vue') },
   { path: '/family/mission/:id', name: 'main_family_mission_edit', component: require('./main/FamilyMissionEdit.vue') },
   { path: '/settings/family/mission', name: 'main_settings_family_mission', component: require('./main/SettingFamilyMission.vue') },
+  { path: '/settings/family/level', name: 'main_settings_family_level', component: require('./main/SettingFamilyLevel.vue') },
 
   // 直播管理
   { path: '/live/analysis', name: 'main_live_analysis', component: require('./main/LiveAnalysis.vue') },

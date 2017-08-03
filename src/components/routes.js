@@ -83,7 +83,7 @@ export default [
   { path: '/activity/draw/:id', name: 'main_activity_edit_draw', component: require('./main/ActivityEditDraw.vue') },
   { path: '/activity/diamond/:id', name: 'main_activity_edit_diamond', component: require('./main/ActivityEditDiamond.vue') },
   { path: '/activity', name: 'main_activity_list', component: require('./main/ActivityList.vue') },
-  { path: '/activity/:id', name: 'main_activity_edit', component: require('./main/ActivityEdit.vue') },
+  // { path: '/activity/:id', name: 'main_activity_edit', component: require('./main/ActivityEdit.vue') },
 
   // 財務管理
   { path: '/account/transaction', name: 'main_account_transaction_list', component: require('./main/AccountTransactionList.vue') },

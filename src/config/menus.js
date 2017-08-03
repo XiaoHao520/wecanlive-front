@@ -84,6 +84,7 @@ export default [{
     { title: '徽章管理', link: { name: 'main_badge_list' } },
     { title: '發送彈幕設置', link: { name: 'main_settings_barrage' } },
     { title: '跑马灯设置', link: { name: 'main_settings_marquee' } },
+    { title: '活動頁設置', link: { name: 'main_activity_page_list' } },
     { title: '启动页设置', link: { name: 'main_settings_splash_screen' } },
     { title: '等级区间管理', link: { name: 'main_settings_level' } },
     { title: '经验值管理', link: { name: 'main_settings_experience_point' } },

@@ -2,8 +2,8 @@
 
   <list-view :model="model"
              pk="id"
-             title="[請輸入主標題]"
-             subtitle="[請輸入副標題]"
+             title="子業務管理"
+             subtitle="活動頁管理"
              :options="options"
              :cols="cols"
              :pageSize="pageSize"
@@ -16,7 +16,7 @@
   export default {
     data() {
       return {
-        model: '',
+        model: 'ActivityPage',
         pageSize: 5,
         options: {
           can_create: true,
@@ -24,7 +24,7 @@
         },
         cols: [
           {
-            title: 'ID',
+            title: '序號',
             key: 'id',
             ordering: 'id',
             filtering: {
@@ -32,9 +32,25 @@
             },
           },
           {
-            title: '是否啓用',
-            key: 'is_active',
-            type: 'switch',
+            title: '活動頁海報',
+            key: 'banner_item.image',
+            type: 'image',
+            width: 75,
+            height: 75,
+          },
+          {
+            title: '跳轉活動鏈接',
+            type: 'link',
+            route: item => ({ name: `main_activity_edit_${item.activity_type.toLowerCase()}`, params: { id: item.id } }),
+            text: item => `活動ID ${item.activity}`,
+          },
+          {
+            title: '備註',
+            key: 'remark',
+          },
+          {
+            title: '最後一次修改記錄',
+            key: 'date_updated',
           },
         ],
         actions: [],

@@ -7,6 +7,7 @@
              :options="options"
              :cols="cols"
              :pageSize="pageSize"
+             :listActions="listActions"
              :actions="actions">
   </list-view>
 
@@ -74,6 +75,18 @@
           },
         ],
         actions: [],
+        listActions: [
+          {
+            title: '分配規則',
+            buttonClass: 'primary',
+            action() {
+              const vm = this;
+              vm.$router.push({
+                name: 'main_robot_settings',
+              });
+            },
+          },
+        ],
       };
     },
     computed: {},

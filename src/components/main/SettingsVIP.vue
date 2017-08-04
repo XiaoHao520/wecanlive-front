@@ -7,6 +7,9 @@
       <h4 class="page-header-subtitle">VIP管理
       </h4>
       <div class="tooltips">
+        <v-button @click="$router.push({name: 'main_settings_vip_logo'})">Logo</v-button>
+        <v-button @click="$router.push({name: 'main_settings_vip_rebate'})">回饋禮包</v-button>
+        <v-button @click="$router.push({name: 'main_settings_vip_effects'})">進場特效</v-button>
         <v-button type="primary" @click="submit()">保存</v-button>
       </div>
     </header>

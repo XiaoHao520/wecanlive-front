@@ -115,6 +115,10 @@ export default [
   { path: '/settings/level', name: 'main_settings_level', component: require('./main/SettingsLevel.vue') },
   { path: '/settings/experience/point', name: 'main_settings_experience_point', component: require('./main/SettingsExperiencePoint.vue') },
   { path: '/settings/vip', name: 'main_settings_vip', component: require('./main/SettingsVIP.vue') },
+  { path: '/settings/vipLogo', name: 'main_settings_vip_logo', component: require('./main/SettingsVIPLogo.vue') },
+  { path: '/settings/vip/rebate', name: 'main_settings_vip_rebate', component: require('./main/SettingsVIPRebate.vue') },
+  { path: '/settings/vip/effects', name: 'main_settings_vip_effects', component: require('./main/SettingsVIPEffects.vue') },
+
   { path: '/badge', name: 'main_badge_list', component: require('./main/BadgeList.vue') },
   { path: '/badge/:id', name: 'main_badge_edit', component: require('./main/BadgeEdit.vue') },
   { path: '/settings/diamond/exchange', name: 'main_settings_diamond_exchange', component: require('./main/SettingsDiamondExchange.vue') },

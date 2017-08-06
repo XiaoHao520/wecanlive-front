@@ -3,8 +3,8 @@
   <div>
 
     <header class="page-header">
-      <h3 class="page-header-title">VIP管理</h3>
-      <h4 class="page-header-subtitle">
+      <h3 class="page-header-title">子業務管理</h3>
+      <h4 class="page-header-subtitle">引導頁設置
       </h4>
       <div class="tooltips">
         <v-button type="primary" @click="submit()">保存</v-button>

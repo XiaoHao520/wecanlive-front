@@ -118,6 +118,7 @@ export default [
   { path: '/settings/vipLogo', name: 'main_settings_vip_logo', component: require('./main/SettingsVIPLogo.vue') },
   { path: '/settings/vip/rebate', name: 'main_settings_vip_rebate', component: require('./main/SettingsVIPRebate.vue') },
   { path: '/settings/vip/effects', name: 'main_settings_vip_effects', component: require('./main/SettingsVIPEffects.vue') },
+  { path: '/settings/guide/page', name: 'main_settings_guide_page', component: require('./main/SettingsGuidePage.vue') },
 
   { path: '/badge', name: 'main_badge_list', component: require('./main/BadgeList.vue') },
   { path: '/badge/:id', name: 'main_badge_edit', component: require('./main/BadgeEdit.vue') },

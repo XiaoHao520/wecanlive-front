@@ -88,6 +88,7 @@ export default [{
     { title: '启动页设置', link: { name: 'main_settings_splash_screen' } },
     { title: '等级区间管理', link: { name: 'main_settings_level' } },
     { title: '经验值管理', link: { name: 'main_settings_experience_point' } },
+    { title: '引導頁管理', link: { name: 'main_settings_guide_page' } },
     { title: 'VIP管理', link: { name: 'main_settings_vip' } },
     { title: '钻石兑换管理', link: { name: 'main_settings_diamond_exchange' } },
     { title: '金币充值管理', link: { name: 'main_settings_recharge' } },

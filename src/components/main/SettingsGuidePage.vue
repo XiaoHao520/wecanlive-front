@@ -20,7 +20,7 @@
           <label>引導頁圖片</label>
         </v-col>
         <v-col :span="8" class="ant-form-item-control">
-          <template v-if="guide_page.value.length">
+          <template v-if="guide_page.value.length>=0">
             <gallery-picker v-model="guide_page.value"
                             @input="updateField"></gallery-picker>
           </template>
@@ -46,22 +46,20 @@
     methods: {
       reload() {
         const vm = this;
+        vm.guide_page.value = [];
         vm.api('Option').get({
           action: 'get',
           name: 'guide_page',
         }).then(resp => {
           if (resp.data) {
             const guidePageArr = JSON.parse(resp.data);
-            const promise = [];
-            promise.push(guidePageArr.forEach(item => {
-              vm.api('Image').get({
-                id: item,
-              }).then(val => {
-                vm.guide_page.value.push(val.data);
-              });
-            }));
-            Promise.all(promise).then(() => {
-              console.log(vm.guide_page);
+            console.log(guidePageArr);
+            vm.api('Image').save({
+              action: 'get_guide_page',
+            }, {
+              guide_page_arr: guidePageArr,
+            }).then(val => {
+              vm.guide_page.value = val.data;
             });
           }
         });

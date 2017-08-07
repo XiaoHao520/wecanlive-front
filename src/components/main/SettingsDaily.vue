@@ -97,14 +97,15 @@
           ],
         },
         type_select: [
-          {
-            value: 'experience',
-            label: '經驗值',
-          },
-          {
-            value: 'icoin',
-            label: 'i幣',
-          },
+//            TODO: 經驗值、i幣先隱藏
+//          {
+//            value: 'experience',
+//            label: '經驗值',
+//          },
+//          {
+//            value: 'icoin',
+//            label: 'i幣',
+//          },
           {
             value: 'coin',
             label: '金幣',

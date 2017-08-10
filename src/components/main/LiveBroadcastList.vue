@@ -24,7 +24,6 @@
           can_create: false,
           can_edit: false,
           can_delete: true,
-          show_total: true,
         },
         filters: {
           target: 'TARGET_LIVE',
@@ -45,6 +44,9 @@
           {
             title: '發送對象',
             key: 'target_text',
+            filter() {
+              return '所有直播間';
+            },
           },
           {
             title: '修改時間',

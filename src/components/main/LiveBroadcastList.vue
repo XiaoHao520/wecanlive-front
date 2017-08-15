@@ -26,7 +26,7 @@
           can_delete: true,
         },
         filters: {
-          target: 'TARGET_LIVE',
+          target_type: 'TARGET_LIVE',
         },
         cols: [
           {

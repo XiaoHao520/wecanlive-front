@@ -7,6 +7,7 @@
              :options="options"
              :cols="cols"
              :pageSize="pageSize"
+             :filters="filters"
              :actions="actions">
   </list-view>
 
@@ -21,6 +22,9 @@
         options: {
           can_create: true,
           can_edit: false,
+        },
+        filters: {
+          target_type: 'TARGET_SYSTEM',
         },
         cols: [
           {
@@ -45,11 +49,22 @@
           },
           {
             title: '推送對象',
-            key: 'groups',
+            key: 'target',
+            mapper: this.$root.choices.broadcast_target,
+            filtering: {
+              type: 'select',
+              search_field: 'kw_target',
+              choices: this.$root.choices.broadcast_target,
+            },
           },
           {
             title: '發送時間',
             key: 'date_sent',
+            filtering: {
+              type: 'date_range',
+              from_field: 'date_from__date_sent',
+              to_field: 'date_to__date_sent',
+            },
           },
         ],
         actions: [],

@@ -324,6 +324,10 @@
                 _vm.notify('請輸入活動結束時間');
                 return false;
               }
+              if (!_vm.fields[4].value) {
+                _vm.notify('請編輯推送消息文字');
+                return false;
+              }
               if (!vm.condition_code) {
                 vm.notify('請選擇抽獎資格');
                 return false;
@@ -376,7 +380,14 @@
               console.log(filter);
               vm.api('Activity').save(filter).then(resp => {
                 vm.$message.success('保存成功');
-                vm.$router.back();
+                vm.api('Broadcast').save({
+                  action: 'create_system_broadcast',
+                }, {
+                  content: vm.fields[4].value,
+                  target: 'TARGET_ACTIVITY',
+                }).then(() => {
+                  vm.$router.back();
+                });
               });
               return false;
             },
@@ -407,11 +418,12 @@
               write: 'thumbnail',
             },
           },
-//          {
-//            title: '編輯推送消息文字',
-//            key: 'content',
-//            type: 'editor',
-//          },
+          {
+            title: '編輯推送消息文字',
+            key: 'content',
+            type: 'input',
+            htmlType: 'textarea',
+          },
         ],
         actions: [],
       };

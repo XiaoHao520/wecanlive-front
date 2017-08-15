@@ -34,8 +34,9 @@
             buttonClass: 'primary',
             action() {
               vm.api('Broadcast').save({
-                action: 'create_live_broadcast',
+                action: 'create_system_broadcast',
               }, {
+                target: 'TARGET_LIVE',
                 content: vm.fields[0].value,
               }).then(() => {
                 vm.$message.success('發佈成功');

@@ -40,6 +40,9 @@ export default [
   { path: '/robot', name: 'main_robot_list', component: require('./main/RobotList.vue') },
   { path: '/robot/settings', name: 'main_robot_settings', component: require('./main/RobotSettings.vue') },
   { path: '/robot/:id', name: 'main_robot_edit', component: require('./main/RobotEdit.vue') },
+  { path: '/live/recommend/index', name: 'main_live_list_recommend_index', component: require('./main/LiveListRecommendIndex.vue') },
+  { path: '/live/recommend/hot', name: 'main_live_list_recommend_hot', component: require('./main/LiveListRecommendHot.vue') },
+
 
   // 節目管理
   { path: '/banner', name: 'main_banner_list', component: require('./main/BannerList.vue') },

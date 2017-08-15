@@ -234,6 +234,10 @@
                 _vm.notify('請選擇獎品');
                 return false;
               }
+              if (!vm.fields[5].value) {
+                _vm.notify('請編輯推送消息文字');
+                return false;
+              }
               const awardAwards = [];
               vm.items.forEach(item => {
                 const awardItem = {
@@ -262,8 +266,15 @@
               }
               console.log(filter);
               vm.api('Activity').save(filter).then(resp => {
-                vm.$message.success('保存成功');
-                vm.$router.back();
+                vm.$message.success('發佈成功');
+                vm.api('Broadcast').save({
+                  action: 'create_system_broadcast',
+                }, {
+                  content: vm.fields[5].value,
+                  target: 'TARGET_ACTIVITY',
+                }).then(() => {
+                  vm.$router.back();
+                });
               });
               return false;
             },
@@ -327,11 +338,12 @@
               }],
             },
           },
-//          {
-//            title: '編輯推送消息文字',
-//            key: 'content',
-//            type: 'editor',
-//          },
+          {
+            title: '編輯推送消息文字',
+            key: 'content',
+            type: 'input',
+            htmlType: 'textarea',
+          },
         ],
         actions: [],
       };

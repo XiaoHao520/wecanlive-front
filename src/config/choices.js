@@ -188,5 +188,12 @@ export default {
     live: '直播',
     activeevent: '動態',
   },
+  broadcast_target: {
+    TARGET_LIVE: '直播间消息',
+    TARGET_SYSTEM: '系统消息',
+    TARGET_SYSTEM_FAMILYS: '家族成員',
+    TARGET_SYSTEM_NOT_FAMILYS: '非家族成員',
+    TARGET_ACTIVITY: '活動消息',
+  },
 };
 

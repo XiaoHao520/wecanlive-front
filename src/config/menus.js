@@ -24,6 +24,7 @@ export default [{
     { title: '機器人管理', link: { name: 'main_robot_list' } },
     { title: '首页推荐直播设置', link: { name: 'main_live_list_recommend_index' } },
     { title: '热门推荐直播设置', link: { name: 'main_live_list_recommend_hot' } },
+    { title: '数据分析', link: { name: 'main_live_data_analysis' } },
   ],
 }, {
   title: '節目管理',

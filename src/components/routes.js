@@ -42,6 +42,7 @@ export default [
   { path: '/robot/:id', name: 'main_robot_edit', component: require('./main/RobotEdit.vue') },
   { path: '/live/recommend/index', name: 'main_live_list_recommend_index', component: require('./main/LiveListRecommendIndex.vue') },
   { path: '/live/recommend/hot', name: 'main_live_list_recommend_hot', component: require('./main/LiveListRecommendHot.vue') },
+  { path: '/live/data/analysis', name: 'main_live_data_analysis', component: require('./main/LiveDataAnalysis.vue') },
 
 
   // 節目管理

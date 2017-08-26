@@ -43,6 +43,10 @@ export default [
   { path: '/live/recommend/index', name: 'main_live_list_recommend_index', component: require('./main/LiveListRecommendIndex.vue') },
   { path: '/live/recommend/hot', name: 'main_live_list_recommend_hot', component: require('./main/LiveListRecommendHot.vue') },
   { path: '/live/data/analysis', name: 'main_live_data_analysis', component: require('./main/LiveDataAnalysis.vue') },
+  { path: '/live/active/member', name: 'main_live_active_member', component: require('./main/LiveActiveMember.vue') },
+  { path: '/live/remain/member', name: 'main_live_remain_member', component: require('./main/LiveRemainMember.vue') },
+  { path: '/live/gender/analysis', name: 'main_live_gender_analysis', component: require('./main/LiveGenderAnalysis.vue') },
+  { path: '/live/watch/analysis', name: 'main_live_watch_analysis', component: require('./main/LiveWatchAnalysis.vue') },
 
 
   // 節目管理

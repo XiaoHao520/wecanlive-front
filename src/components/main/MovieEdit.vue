@@ -26,6 +26,10 @@
                 vm.notify('請選擇熱門視頻類型');
                 return false;
               }
+              if (_vm.fields[4].value === 'HOT' && _vm.fields[4].value === 'LIVE' && !_vm.fields[5].value) {
+                vm.notify('請選擇直播');
+                return false;
+              }
               return true;
             },
             post_save(_vm) {
@@ -75,6 +79,51 @@
 //              return false;
 //            },
 //            context: !this.$route.params.is_hot,
+          },
+          {
+            title: '直播',
+            type: 'object',
+            key: 'live',
+            options: {
+              model: 'Live',
+              display_field: 'name',
+              show_pager: true,
+              cols: [{
+                title: '房間號',
+                key: 'id',
+                ordering: 'id',
+                filtering: {
+                  search_field: 'kw_id',
+                },
+              }, {
+                title: '直播分類',
+                key: 'category',
+                filtering: {
+                  search_field: 'kw_category__name',
+                },
+              }, {
+                title: '主播暱稱',
+                key: 'nickname',
+                filtering: {
+                  search_field: 'kw_author__member__nickname',
+                },
+              }, {
+                title: '主播賬號',
+                key: 'mobile',
+                filtering: {
+                  search_field: 'kw_author__member__mobile',
+                },
+              }, {
+                title: '直播狀態',
+                key: 'live_status',
+                mapper: vm.$root.choices.live_status,
+                filtering: {
+                  type: 'select',
+                  search_field: 'live_status',
+                  choices: vm.$root.choices.live_status,
+                },
+              }],
+            },
           },
           {
             title: '跳轉鏈接',

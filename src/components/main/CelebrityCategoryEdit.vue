@@ -50,6 +50,39 @@
              type="flex"
              style="margin: 4px 0">
         <v-col :span="6" class="ant-form-item-label" style="padding: 0">
+          <label>所屬用戶</label>
+        </v-col>
+        <v-col :span="18" class="ant-form-item-control">
+          <label>{{field.name}}</label>
+          <v-button size="small"
+                    @click="modal.show=true">选择
+          </v-button>
+          <v-button size="small" v-if="field.value"
+                    @click="field.value = null; field.name = ''">清除
+          </v-button>
+        </v-col>
+      </v-row>
+
+      <v-modal title="選擇用戶"
+               :visible="modal.show"
+               @ok="modal.show=false"
+               @cancel="modal.show=false">
+        <list-view-table
+          class="list-view-main-table"
+          :cols="modal.cols"
+          :options="modal.options"
+          :model="modal.model"
+          :pageSize="5"
+          :actions="modal.actions"
+          :filters="modal.filters"
+          ref="modalView"
+        ></list-view-table>
+      </v-modal>
+
+      <v-row :gutter="6"
+             type="flex"
+             style="margin: 4px 0">
+        <v-col :span="6" class="ant-form-item-label" style="padding: 0">
           <label>置頂順序</label>
         </v-col>
         <v-col :span="8" class="ant-form-item-control">
@@ -67,6 +100,7 @@
 
   export default {
     data() {
+      const vm = this;
       return {
         category_id: 0,
         item: {
@@ -81,6 +115,55 @@
           value: 'ACTIVITY',
           label: '活動',
         }],
+        field: {
+          name: '',
+          value: null,
+        },
+        modal: {
+          show: false,
+          model: 'Member',
+          options: {
+            show_pager: true,
+          },
+          actions: [{
+            title: '選擇',
+            buttonClass: 'primary',
+            action(item) {
+              vm.field.name = item.mobile;
+              vm.field.value = item.user;
+              console.log(vm.field);
+              vm.modal.show = false;
+            },
+          }],
+          cols: [
+            { title: '用戶ID', key: 'user' },
+            { title: '頭像', key: 'avatar_url', type: 'image', width: 75, height: 75 },
+            {
+              title: '暱稱',
+              key: 'nickname',
+              filtering: {
+                search_field: 'kw_nickname',
+              },
+            },
+            {
+              title: '用戶賬號',
+              key: 'mobile',
+              filtering: {
+                search_field: 'kw_mobile',
+              },
+            },
+            {
+              title: '性別',
+              key: 'gender',
+              mapper: vm.$root.choices.gender,
+              filtering: {
+                type: 'select',
+                search_field: 'kw_gender',
+                choices: vm.$root.choices.gender,
+              },
+            },
+          ],
+        },
       };
     },
     watch: {
@@ -123,8 +206,23 @@
             vm.category_id = resp.data.category.category_id;
             vm.item.category_name = resp.data.name;
             vm.item.sorting = resp.data.sorting;
+            vm.field.value = resp.data.leader;
+            vm.field.name = resp.data.leader_mobile;
           });
         }
+      },
+      updateField(field) {
+        const vm = this;
+        if (field.onUpdate) {
+          field.onUpdate(field);
+        }
+        vm.$emit('update', field);
+      },
+      pickFieldObject(field) {
+        const vm = this;
+        vm.pickObject(field).then(() => {
+          vm.updateField(field);
+        });
       },
       change_type(val) {
         console.log(val);
@@ -164,12 +262,17 @@
           vm.notify('請填寫分類名稱');
           return false;
         }
+        if (!vm.field.value) {
+          vm.notify('請選擇所屬用戶');
+          return false;
+        }
         if (Number(vm.$route.params.id)) {
           const promise = [];
           const filter = {
             type: vm.item.selected_type,
             name: vm.item.category_name,
             sorting: vm.item.sorting,
+            leader: vm.field.value,
           };
           if (vm.item.selected_type === 'LIVE') {
             promise.push(vm.api('LiveCategory').get({
@@ -206,6 +309,7 @@
             type: vm.item.selected_type,
             name: vm.item.category_name,
             sorting: vm.item.sorting,
+            leader: vm.field.value,
           };
           if (vm.item.selected_type === 'LIVE') {
             promise.push(vm.api('LiveCategory').get({

@@ -34,6 +34,11 @@
             title: '分類名稱',
             key: 'name',
           },
+//          {
+//            title: 'gg',
+//            key: 'district',
+//            type: 'district',
+//          },
           {
             title: '置頂順序',
             key: 'sorting',

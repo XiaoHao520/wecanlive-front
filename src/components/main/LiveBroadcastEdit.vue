@@ -40,7 +40,7 @@
                 content: vm.fields[0].value,
               }).then(() => {
                 vm.$message.success('發佈成功');
-//                vm.$router.back();
+                vm.$router.back();
               });
             },
           },

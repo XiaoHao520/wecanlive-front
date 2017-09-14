@@ -47,6 +47,7 @@ export default [
   { path: '/live/remain/member', name: 'main_live_remain_member', component: require('./main/LiveRemainMember.vue') },
   { path: '/live/gender/analysis', name: 'main_live_gender_analysis', component: require('./main/LiveGenderAnalysis.vue') },
   { path: '/live/watch/analysis', name: 'main_live_watch_analysis', component: require('./main/LiveWatchAnalysis.vue') },
+  { path: '/live/broadcast/setting', name: 'main_live_broadcast_setting', component: require('./main/LiveBroadcastSetting.vue') },
 
 
   // 節目管理

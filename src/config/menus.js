@@ -20,7 +20,8 @@ export default [{
   sub_menus: [
     { title: '直播分類', link: { name: 'main_live_category_list' } },
     { title: '直播間管理', link: { name: 'main_live_list' } },
-    { title: '直播間系統消息', link: { name: 'main_live_broadcast_list' } },
+    // { title: '直播間系統消息', link: { name: 'main_live_broadcast_list' } },
+    { title: '直播間系統消息', link: { name: 'main_live_broadcast_setting' } },
     { title: '機器人管理', link: { name: 'main_robot_list' } },
     { title: '首页推荐直播设置', link: { name: 'main_live_list_recommend_index' } },
     { title: '热门推荐直播设置', link: { name: 'main_live_list_recommend_hot' } },

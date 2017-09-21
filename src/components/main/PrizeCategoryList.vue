@@ -20,6 +20,7 @@
         pageSize: 5,
         options: {
           can_create: true,
+          can_delete: true,
           can_edit: true,
         },
         cols: [

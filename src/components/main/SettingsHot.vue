@@ -32,7 +32,7 @@
           htmlType: 'number',
           value: 0,
           min: 0,
-          description: '分享1次權重增加1分',
+          description: '不填則默認5分',
         }, {
           title: '直播湧入觀看人數（單位：1）',
           key: 'count_live_watch',
@@ -40,7 +40,7 @@
           htmlType: 'number',
           value: 0,
           min: 0,
-          description: '湧入直播觀看人當中，VIP4以上，每一個人在前面的基礎上加5分',
+          description: '不填則直播湧入觀看人數 1x1分',
         }, {
           title: '直播湧入觀看人數 紅寶石（單位：1）',
           key: 'level_red',
@@ -48,7 +48,7 @@
           htmlType: 'number',
           value: 0,
           min: 0,
-          description: '湧入直播觀看人當中，綠色水晶等級以上，每一個人在前面的基礎上加10分',
+          description: '不填則土豪(VIP4)/高等級(綠水晶以上)進駐直播間 1x10分,每升一個VIP權重+5分',
         }, {
           title: '收到鑽石數（單位：1）',
           key: 'count_receive_diamond',
@@ -56,6 +56,7 @@
           htmlType: 'number',
           value: 0,
           min: 0,
+          description: '不填收到的鑽石數量 1x1分',
         }, {
           title: '發言數（單位：1）',
           key: 'count_comment',
@@ -63,6 +64,7 @@
           htmlType: 'number',
           value: 0,
           min: 0,
+          description: '不填則發言筆數 x0.2分,排序規則：正在直播（按照熱門排序規則）>已結束的歷史直播（按照熱門排序規則',
         }],
       };
     },

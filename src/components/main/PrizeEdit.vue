@@ -117,6 +117,11 @@
             default: 'NORMAL',
           },
           {
+            title: '礼物类名',
+            key: 'prize_class',
+            description: '用以配合前端禮物顯示的禮物類名',
+          },
+          {
             title: '排序',
             key: 'sorting',
             htmlType: 'number',

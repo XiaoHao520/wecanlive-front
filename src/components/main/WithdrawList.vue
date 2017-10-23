@@ -51,9 +51,9 @@
           },
           {
             title: '用戶ID',
-            key: 'author',
+            key: 'relative_id',
             filtering: {
-              search_field: 'kw_author',
+              search_field: 'kw_author__member__relative_id',
             },
           },
           {

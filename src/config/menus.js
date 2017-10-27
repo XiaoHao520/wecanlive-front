@@ -70,6 +70,12 @@ export default [{
     { title: '提現黑名單', link: { name: 'main_withdraw_blacklist' } },
   ],
 }, {
+  title: '兌換管理',
+  sub_menus: [
+    { title: '鑽石兌換', link: { name: 'main_settings_diamond_exchange' } },
+    { title: '金幣充值', link: { name: 'main_settings_recharge' } },
+  ],
+}, {
   title: '子業務管理',
   sub_menus: [
     { title: '熱門頁面Banner', link: { name: 'main_banner_list_hot' } },
